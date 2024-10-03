@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Redirecting...</title>
+        <link rel="stylesheet" href="./style.css">
+		<script>
+			// Function to handle countdown
+			let countdownTime = 5; // Countdown from 10 seconds
+
+			function startCountdown() {
+				const countdownElement = document.getElementById("countdown");
+				const interval = setInterval(() => {
+					countdownElement.textContent = `Redirecting in ${countdownTime} seconds...`;
+					countdownTime--;
+
+					if (countdownTime < 0) {
+						clearInterval(interval);
+						// Redirect to the desired URL
+						window.location.replace("https://www.shizuka.my.id");
+					}
+				}, 1000);
+			}
+
+			window.onload = startCountdown;
+		</script>
+	</head>
+	<body>
+		<!-- Countdown display -->
+		<div id="countdown" style="font-size: 20px; color: aliceblue; font-weight: bold;"></div>
+
+        <!-- Optional additional content -->
+        <div id="dvd"></div>
+
+		<script src="./script.js"></script>
+	</body>
+</html>
