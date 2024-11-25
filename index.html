@@ -6,24 +6,24 @@
         <link rel="stylesheet" href="./style.css">
 		<script>
 			// Function to handle countdown
-			let countdownTime = 5; // Countdown from 10 seconds
-
 			function startCountdown() {
 				const countdownElement = document.getElementById("countdown");
 				const interval = setInterval(() => {
-					countdownElement.textContent = `Redirecting in ${countdownTime} seconds...`;
-					countdownTime--;
-
-					if (countdownTime < 0) {
+					// Generate a random time between 1 and 20
+					const randomTime = Math.floor(Math.random() * 20) + 1;
+					countdownElement.innerHTML = `Work in progress,<br>Remaining Time: ${randomTime} seconds...`;
+		
+					// Stop the countdown and redirect after a fixed duration (e.g., 10 seconds)
+					if (randomTime === 22) { // Redirecting based on a specific condition
 						clearInterval(interval);
 						// Redirect to the desired URL
 						window.location.replace("https://www.shizuka.my.id");
 					}
 				}, 1000);
 			}
-
+		
 			window.onload = startCountdown;
-		</script>
+		</script>		
 	</head>
 	<body>
 		<!-- Countdown display -->
